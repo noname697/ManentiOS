@@ -1,9 +1,9 @@
-import TopBar from "./components/Desktop/TopBar";
+import WelcomeWindow from "./components/Desktop/WelcomeWindow";
 
 const App = () => {
   return (
     <>
-      <TopBar />
+      <WelcomeWindow />
     </>
   );
 };
