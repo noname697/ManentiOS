@@ -1,9 +1,9 @@
-import OnBoarding from "./components/OnBoarding";
+import Clock from "./components/Desktop/Clock";
 
 const App = () => {
   return (
     <>
-      <OnBoarding />
+      <Clock />
     </>
   );
 };
