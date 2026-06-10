@@ -5,6 +5,8 @@ const OSWindow = ({
   children,
   isOpen,
   onClose,
+  onFocus,
+  zIndex = 10,
   defaultPosition = { x: 80, y: 120 },
   className = "",
 }) => {
@@ -21,6 +23,8 @@ const OSWindow = ({
   if (!isOpen) return null;
 
   const handlePointerDown = (event) => {
+    onFocus?.();
+
     dragData.current = {
       isDragging: true,
       startX: event.clientX,
@@ -38,9 +42,12 @@ const OSWindow = ({
     const distanceX = event.clientX - dragData.current.startX;
     const distanceY = event.clientY - dragData.current.startY;
 
+    const nextX = dragData.current.initialX + distanceX;
+    const nextY = dragData.current.initialY + distanceY;
+
     setPosition({
-      x: dragData.current.initialX + distanceX,
-      y: dragData.current.initialY + distanceY,
+      x: Math.max(8, nextX),
+      y: Math.max(64, nextY),
     });
   };
 
@@ -55,6 +62,7 @@ const OSWindow = ({
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
+        zIndex,
       }}
     >
       <header
