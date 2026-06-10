@@ -23,7 +23,7 @@ const Clock = () => {
   });
 
   return (
-    <span>
+    <span className="text-sm font-medium text-slate-100">
       {formattedDate} • {formattedTime}
     </span>
   );

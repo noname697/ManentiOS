@@ -1,9 +1,9 @@
-import Clock from "./components/Desktop/Clock";
+import TopBar from "./components/Desktop/TopBar";
 
 const App = () => {
   return (
     <>
-      <Clock />
+      <TopBar />
     </>
   );
 };
