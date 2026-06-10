@@ -2,7 +2,7 @@ import Clock from "./Clock";
 
 const TopBar = ({ onOpenWelcome }) => {
   return (
-    <header className="absolute left-0 top-0 z-20 flex w-full items-center justify-between border-b border-white/10 bg-slate-950/40 px-5 py-3 text-white backdrop-blur-md">
+    <header className="absolute left-0 top-0 z-999 flex w-full items-center justify-between border-b border-white/10 bg-slate-950/40 px-5 py-3 text-white backdrop-blur-md">
       <div className="flex items-center gap-3">
         <button
           type="button"

@@ -2,7 +2,7 @@ import DesktopIcon from "./DesktopIcon";
 
 const DesktopApps = ({ selectedIcon, onSelectIcon, onOpenFrostLog }) => {
   return (
-    <div className="absolute left-5 top-20 z-30 flex flex-col gap-4">
+    <div className="absolute left-5 top-20 z-10 flex flex-col gap-4">
       <DesktopIcon
         icon="🌧️"
         label="FrostLog"
