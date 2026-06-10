@@ -1,3 +1,5 @@
+import FeatureCard from "../FeatureCard";
+
 const OnBoarding = () => {
   return (
     <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
@@ -22,31 +24,23 @@ const OnBoarding = () => {
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-              <div className="mb-3 text-3xl">💻</div>
-              <h2 className="font-semibold">Projects</h2>
-              <p className="mt-2 text-sm text-slate-400">
-                Explores the apps, websites, bots, and experiments I have built.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-              <div className="mb-3 text-3xl">🧠</div>
-              <h2 className="font-semibold">About Me</h2>
-              <p className="mt-2 text-sm text-slate-400">
-                Learn more about who I am, what I study, and what I like to
-                create.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5">
-              <div className="mb-3 text-3xl">⚡</div>
-              <h2 className="font-semibold">Fast & Web-based</h2>
-              <p className="mt-2 text-sm text-slate-400">
-                ManentiOS runs directly in the brownser with a simple and modern
-                interface.
-              </p>
-            </div>
+            <FeatureCard
+              icon="💻"
+              title="Projects"
+              description="Explores the apps, websites, bots, and experiments I have built."
+            />
+            <FeatureCard
+              icon="🧠"
+              title=">About Me"
+              description="Learn more about who I am, what I study, and what I like to
+                create."
+            />
+            <FeatureCard
+              icon="⚡"
+              title="Fast & Web-based"
+              description="ManentiOS runs directly in the brownser with a simple and modern
+                interface."
+            />
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
