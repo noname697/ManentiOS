@@ -1,5 +1,7 @@
 import ActionButton from "../ActionButton";
 import FeatureCard from "../FeatureCard";
+import ProfileImage from "../ProfileImage";
+import profileImage from "../../assets/profile.png";
 
 const features = [
   {
@@ -24,41 +26,46 @@ const features = [
 
 const OnBoarding = () => {
   return (
-    <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
-      <section className="w-full max-w-4xl">
+    <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6 py-10">
+      <section className="w-full max-w-6xl">
         <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-2xl shadow-blue-500/10">
-          <div className="mb-8">
-            <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1 text-sm text-blue-300">
-              Welcome to my WebOS
-            </span>
-            <h1 className="mt-6 text-4xl font-bold md:text-6xl">
-              Welcome to{" "}
-              <span className="bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                ManentiOS
-              </span>
-            </h1>
+          <div className="grid  items-center gap-10 lg:grid-cols-[1.5fr_1fr]">
+            <div>
+              <div className="mb-8">
+                <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1 text-sm text-blue-300">
+                  Welcome to my WebOS
+                </span>
+                <h1 className="mt-6 text-4xl font-bold md:text-6xl">
+                  Welcome to{" "}
+                  <span className="bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    ManentiOS
+                  </span>
+                </h1>
 
-            <p className="mt-4 max-w-2xl text-slate-300">
-              A personal web operating system built to showcase my projects,
-              skills, and developer journey through an interactive desktop-style
-              experience.
-            </p>
-          </div>
+                <p className="mt-4 max-w-2xl text-slate-300">
+                  A personal web operating system built to showcase my projects,
+                  skills, and developer journey through an interactive
+                  desktop-style experience.
+                </p>
+              </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {features.map((feature, index) => (
-              <FeatureCard
-                key={index}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
-            ))}
-          </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {features.map((feature, index) => (
+                  <FeatureCard
+                    key={index}
+                    icon={feature.icon}
+                    title={feature.title}
+                    description={feature.description}
+                  />
+                ))}
+              </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ActionButton>Enter ManentiOS</ActionButton>
-            <ActionButton variant="secondary">View Projects</ActionButton>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <ActionButton>Enter ManentiOS</ActionButton>
+                <ActionButton variant="secondary">View Projects</ActionButton>
+              </div>
+            </div>
+            <ProfileImage src={profileImage} alt="Picture of Arthur Manenti" />
           </div>
         </div>
       </section>
