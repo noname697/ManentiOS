@@ -1,6 +1,6 @@
-import ActionButton from "../ActionButton";
-import FeatureCard from "../FeatureCard";
-import ProfileImage from "../ProfileImage";
+import ActionButton from "./ActionButton";
+import FeatureCard from "./FeatureCard";
+import ProfileImage from "./ProfileImage";
 import profileImage from "../../assets/profile.png";
 
 const features = [
