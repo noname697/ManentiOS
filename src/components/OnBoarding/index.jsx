@@ -1,3 +1,4 @@
+import ActionButton from "../ActionButton";
 import FeatureCard from "../FeatureCard";
 
 const OnBoarding = () => {
@@ -44,12 +45,8 @@ const OnBoarding = () => {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button className="rounded-xl bg-linear-to-r from-blue-500 to-purple-600 px-6 py-3 font-semibold transition hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30">
-              Enter ManentiOS
-            </button>
-            <button className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-slate-300 transition hover:bg-slate-800">
-              View Projects
-            </button>
+            <ActionButton>Enter ManentiOS</ActionButton>
+            <ActionButton variant="secondary">View Projects</ActionButton>
           </div>
         </div>
       </section>
