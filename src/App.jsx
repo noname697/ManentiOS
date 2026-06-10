@@ -1,9 +1,9 @@
-import WelcomeWindow from "./components/Desktop/WelcomeWindow";
+import Desktop from "./components/Desktop/Desktop";
 
 const App = () => {
   return (
     <>
-      <WelcomeWindow />
+      <Desktop />
     </>
   );
 };
