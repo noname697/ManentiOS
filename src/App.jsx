@@ -1,7 +1,9 @@
+import OnBoarding from "./components/OnBoarding";
+
 const App = () => {
   return (
     <>
-      <main></main>
+      <OnBoarding />
     </>
   );
 };
