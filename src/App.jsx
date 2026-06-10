@@ -1,10 +1,9 @@
-// import Desktop from "./components/Desktop/Desktop";
-import OSWindow from "./components/Desktop/OSWindow";
+import Desktop from "./components/Desktop/Desktop";
 
 const App = () => {
   return (
     <>
-      <OSWindow />
+      <Desktop />
     </>
   );
 };
