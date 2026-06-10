@@ -1,6 +1,27 @@
 import ActionButton from "../ActionButton";
 import FeatureCard from "../FeatureCard";
 
+const features = [
+  {
+    icon: "💻",
+    title: "Projects",
+    description:
+      "Explores the apps, websites, bots, and experiments I have built.",
+  },
+  {
+    icon: "🧠",
+    title: "About Me",
+    description:
+      "Learn more about who I am, what I study, and what I like to create.",
+  },
+  {
+    icon: "⚡",
+    title: "Fast & Web-based",
+    description:
+      "ManentiOS runs directly in the browser with a simple and modern interface.",
+  },
+];
+
 const OnBoarding = () => {
   return (
     <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
@@ -25,23 +46,14 @@ const OnBoarding = () => {
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            <FeatureCard
-              icon="💻"
-              title="Projects"
-              description="Explores the apps, websites, bots, and experiments I have built."
-            />
-            <FeatureCard
-              icon="🧠"
-              title=">About Me"
-              description="Learn more about who I am, what I study, and what I like to
-                create."
-            />
-            <FeatureCard
-              icon="⚡"
-              title="Fast & Web-based"
-              description="ManentiOS runs directly in the brownser with a simple and modern
-                interface."
-            />
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
