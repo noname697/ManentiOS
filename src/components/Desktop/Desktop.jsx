@@ -6,6 +6,7 @@ import OSWindow from "./OSWindow";
 import DesktopApps from "./DesktopApps";
 import FrostLogApp from "../Apps/FrostLogApp";
 import CalculatorApp from "../Apps/CalculatorApp";
+import ProjectsApp from "../Apps/ProjectsApp";
 
 const Desktop = () => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -97,6 +98,17 @@ const Desktop = () => {
         className="w-fit"
       >
         <CalculatorApp />
+      </OSWindow>
+      <OSWindow
+        title="Projects"
+        isOpen={openWindows.projects}
+        onClose={() => closeWindow("projects")}
+        onFocus={() => focusWindow("projects")}
+        zIndex={windowsZIndexes.projects}
+        defaultPosition={{ x: 260, y: 110 }}
+        className="w-fit"
+      >
+        <ProjectsApp />
       </OSWindow>
     </main>
   );
