@@ -1,14 +1,26 @@
-const ActionButton = ({ children, variant = "primary" }) => {
-  const baseClasses = "rounded-xl px-6 py-3 font-semibold transition";
+const ActionButton = ({
+  children,
+  variant = "primary",
+  type = "button",
+  onClick,
+}) => {
+  const baseClasses =
+    "rounded-xl px-6 py-3 font-semibold transition active:scale-95";
 
   const variants = {
     primary:
-      "bg-linear-to-r from-blue-500 to-purple-600  hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30",
-    secondary: "border border-slate-700  text-slate-300 hover:bg-slate-800",
+      "bg-linear-to-r from-cyan-400 to-blue-600 text-white hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30",
+    secondary:
+      "border border-white-10 bg-white/5 text-slate-300 hover:bg-white/10",
+    ghost: "text-slate-300 hover:bg-white/10",
   };
 
   return (
-    <button className={`${baseClasses} ${variants[variant]}`}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`${baseClasses} ${variants[variant]}`}
+    >
       {children}
     </button>
   );

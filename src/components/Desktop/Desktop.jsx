@@ -8,13 +8,13 @@ import FrostLogApp from "../Apps/FrostLogApp";
 import CalculatorApp from "../Apps/CalculatorApp";
 import ProjectsApp from "../Apps/ProjectsApp";
 
-const Desktop = () => {
+const Desktop = ({ initialOpenApp = null }) => {
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [openWindows, setOpenWindows] = useState({
-    welcome: true,
-    frostLog: false,
-    calculator: false,
-    projects: false,
+    welcome: initialOpenApp === null,
+    frostLog: initialOpenApp === "frostLog",
+    calculator: initialOpenApp === "calculator",
+    projects: initialOpenApp === "projects",
   });
   const highestZIndex = useRef(40);
   const [windowsZIndexes, setWindowsZIndexes] = useState({
