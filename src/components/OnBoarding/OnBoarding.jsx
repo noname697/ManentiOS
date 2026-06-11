@@ -1,6 +1,7 @@
 import ActionButton from "./ActionButton";
 import ProfileImage from "./ProfileImage";
 import profileImage from "../../assets/profile.png";
+import wallpaper from "../../assets/loginWallpaper.png";
 import { useState } from "react";
 
 const OnBoarding = ({ onEnter, onOpenProjects, onOpenFrostLog }) => {
@@ -12,7 +13,10 @@ const OnBoarding = ({ onEnter, onOpenProjects, onOpenFrostLog }) => {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-cover bg-center text-white">
+    <main
+      className="relative min-h-screen overflow-hidden bg-cover bg-center text-white"
+      style={{ backgroundImage: `url(${wallpaper})` }}
+    >
       <div className="absolute inset-0 bg-slate-950/60" />
       <div className="absolute inset-0 bg-linear-to-b from-slate-950/40 via-slate-950/50 to-slate-950/90" />
 
@@ -24,7 +28,7 @@ const OnBoarding = ({ onEnter, onOpenProjects, onOpenFrostLog }) => {
       <section className="relative z-10 flex min-h-screen items-center justify-center px-6 py-10">
         <div className="grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
           <div className="hidden lg:block">
-            <div className="rounded-3xl border border-white/10 bg-slate-950/40 p-6 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl">
+            <div className="rounded-3xl border border-white/10  py-6">
               <ProfileImage
                 src={profileImage}
                 alt="Picture of Arthur Manenti"
