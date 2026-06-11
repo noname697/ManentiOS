@@ -5,14 +5,17 @@ import WelcomeWindow from "./WelcomeWindow";
 import OSWindow from "./OSWindow";
 import DesktopApps from "./DesktopApps";
 import FrostLogApp from "../Apps/FrostLogApp";
+import CalculatorApp from "../Apps/CalculatorApp";
 
 const Desktop = () => {
-  const [isWelcomeOpen, setIsWelcomeOpen] = useState(true);
-  const [isFrostLogOpen, setIsFrostLogOpen] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState(null);
-
-  const highestZIndex = useRef(20);
-
+  const [openWindows, setOpenWindows] = useState({
+    welcome: true,
+    frostLog: false,
+    calculator: false,
+    projects: false,
+  });
+  const highestZIndex = useRef(40);
   const [windowsZIndexes, setWindowsZIndexes] = useState({
     welcome: 21,
     frostLog: 22,
@@ -30,14 +33,19 @@ const Desktop = () => {
   };
 
   const openWindow = (windowId) => {
-    if (windowId === "welcome") {
-      setIsWelcomeOpen(true);
-    }
-    if (windowId === "frostLog") {
-      setIsFrostLogOpen(true);
-    }
+    setOpenWindows((prev) => ({
+      ...prev,
+      [windowId]: true,
+    }));
 
     focusWindow(windowId);
+  };
+
+  const closeWindow = (windowId) => {
+    setOpenWindows((prev) => ({
+      ...prev,
+      [windowId]: false,
+    }));
   };
 
   const handleSelectIcon = (iconId) => {
@@ -46,7 +54,7 @@ const Desktop = () => {
 
   return (
     <main
-      className="relative min-h-screen overflow-hidden bg-cover bg-center font-sans"
+      className="relative min-h-screen overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${wallpaper})` }}
     >
       <div className="absolute inset-0 bg-slate-950/50"></div>
@@ -55,12 +63,12 @@ const Desktop = () => {
       <DesktopApps
         selectedIcon={selectedIcon}
         onSelectIcon={handleSelectIcon}
-        onOpenFrostLog={() => openWindow("frostLog")}
+        onOpenApp={openWindow}
       />
       <OSWindow
         title="Welcome"
-        isOpen={isWelcomeOpen}
-        onClose={() => setIsWelcomeOpen(false)}
+        isOpen={openWindows.welcome}
+        onClose={() => closeWindow("welcome")}
         onFocus={() => focusWindow("welcome")}
         zIndex={windowsZIndexes.welcome}
         defaultPosition={{ x: 120, y: 120 }}
@@ -70,14 +78,25 @@ const Desktop = () => {
       </OSWindow>
       <OSWindow
         title="FrostLog"
-        isOpen={isFrostLogOpen}
-        onClose={() => setIsFrostLogOpen(false)}
+        isOpen={openWindows.frostLog}
+        onClose={() => closeWindow("frostLog")}
         onFocus={() => focusWindow("frostLog")}
         zIndex={windowsZIndexes.frostLog}
         defaultPosition={{ x: 340, y: 130 }}
         className="w-fit"
       >
         <FrostLogApp />
+      </OSWindow>
+      <OSWindow
+        title="Calculator"
+        isOpen={openWindows.calculator}
+        onClose={() => closeWindow("calculator")}
+        onFocus={() => focusWindow("calculator")}
+        zIndex={windowsZIndexes.calculator}
+        defaultPosition={{ x: 520, y: 140 }}
+        className="w-fit"
+      >
+        <CalculatorApp />
       </OSWindow>
     </main>
   );
