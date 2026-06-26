@@ -10,6 +10,7 @@ import ProjectsApp from "../Apps/ProjectsApp";
 import Dock from "./Dock";
 import SettingsApp from "../Apps/SettingsApp";
 import CommandPalette from "./CommandPalette";
+import AmbientLayer from "./AmbientLayer";
 
 const Desktop = ({ initialOpenApp = null }) => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -77,7 +78,11 @@ const Desktop = ({ initialOpenApp = null }) => {
       <div
         className={`pointer-events-none absolute inset-0 bg-linear-to-b ${visualModeOverlay[visualMode]}`}
       ></div>
+
+      <AmbientLayer effect={ambientEffect} />
+
       <TopBar onOpenWelcome={() => openWindow("welcome")} />
+
       <DesktopApps
         selectedIcon={selectedIcon}
         onSelectIcon={handleSelectIcon}

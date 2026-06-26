@@ -3,15 +3,29 @@
 
 @theme {
     --font-space-grotesk: "Space Grotesk", sans-serif;
+}
 
-    @keyframes fall {
-        from {
-            transform: translateY(-10vh);
-        }
+@keyframes ambient-snow-fall {
+    0% {
+        transform: translate3d(0, -12vh, 0);
+    }
 
-        to {
-            transform: translateY(120vh);
-        }
+    50% {
+        transform: translate3d(var(--ambient-drift), 52vh, 0);
+    }
+
+    100% {
+        transform: translate3d(calc(var(--ambient-drift) * -0.35), 116vh, 0);
+    }
+}
+
+@keyframes ambient-rain-fall {
+    0% {
+        transform: translate3d(0, -18vh, 0) skewX(-14deg);
+    }
+
+    100% {
+        transform: translate3d(var(--ambient-drift), 118vh, 0) skewX(-14deg);
     }
 }
 
