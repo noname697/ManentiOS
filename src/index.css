@@ -3,6 +3,16 @@
 
 @theme {
     --font-space-grotesk: "Space Grotesk", sans-serif;
+
+    @keyframes fall {
+        from {
+            transform: translateY(-10vh);
+        }
+
+        to {
+            transform: translateY(120vh);
+        }
+    }
 }
 
 @layer base {
