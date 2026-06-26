@@ -139,7 +139,12 @@ const Desktop = ({ initialOpenApp = null }) => {
         defaultPosition={{ x: 420, y: 120 }}
         className="w-fit"
       >
-        <SettingsApp />
+        <SettingsApp
+          visualMode={visualMode}
+          onChangeVisualMode={setVisualMode}
+          ambientEffect={ambientEffect}
+          onChangeAmbientEffect={setAmbientEffect}
+        />
       </OSWindow>
     </main>
   );
