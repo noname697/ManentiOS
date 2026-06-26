@@ -9,6 +9,7 @@ import CalculatorApp from "../Apps/CalculatorApp";
 import ProjectsApp from "../Apps/ProjectsApp";
 import Dock from "./Dock";
 import SettingsApp from "../Apps/SettingsApp";
+import CommandPalette from "./CommandPalette";
 
 const Desktop = ({ initialOpenApp = null }) => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -84,7 +85,7 @@ const Desktop = ({ initialOpenApp = null }) => {
       />
       <Dock openWindows={openWindows} onOpenApp={openWindow} />
 
-      {/* <CommandPalette onOpenApp={openWindow}/> */}
+      <CommandPalette onOpenApp={openWindow} />
 
       <OSWindow
         title="Welcome"
