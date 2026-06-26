@@ -7,6 +7,7 @@ import DesktopApps from "./DesktopApps";
 import FrostLogApp from "../Apps/FrostLogApp";
 import CalculatorApp from "../Apps/CalculatorApp";
 import ProjectsApp from "../Apps/ProjectsApp";
+import Dock from "./Dock";
 
 const Desktop = ({ initialOpenApp = null }) => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -110,6 +111,7 @@ const Desktop = ({ initialOpenApp = null }) => {
       >
         <ProjectsApp />
       </OSWindow>
+      <Dock openWindows={openWindows} onOpenApp={openWindow} />
     </main>
   );
 };
