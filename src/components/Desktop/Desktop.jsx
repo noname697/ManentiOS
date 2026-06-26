@@ -8,6 +8,7 @@ import FrostLogApp from "../Apps/FrostLogApp";
 import CalculatorApp from "../Apps/CalculatorApp";
 import ProjectsApp from "../Apps/ProjectsApp";
 import Dock from "./Dock";
+import SettingsApp from "../Apps/SettingsApp";
 
 const Desktop = ({ initialOpenApp = null }) => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -16,12 +17,24 @@ const Desktop = ({ initialOpenApp = null }) => {
     frostLog: initialOpenApp === "frostLog",
     calculator: initialOpenApp === "calculator",
     projects: initialOpenApp === "projects",
+    settings: initialOpenApp === "settings",
   });
   const highestZIndex = useRef(40);
   const [windowsZIndexes, setWindowsZIndexes] = useState({
-    welcome: 21,
-    frostLog: 22,
+    welcome: 41,
+    frostLog: 42,
+    calculator: 43,
+    projects: 44,
+    settings: 45,
   });
+  const [visualMode, setVisualMode] = useState("winter");
+  const [ambientEffect, setAmbientEffect] = useState("snow");
+
+  const visualModeOverlay = {
+    winter: "from-slate-950/30 via-slate-950/30 to-slate-950/85",
+    rain: "from-slate-950/50 via-slate-950/60 to-slate-950/90",
+    aurora: "from-cyan-950/30 via-slate-950/40 to-purple-950/70",
+  };
 
   const focusWindow = (windowId) => {
     highestZIndex.current += 1;
@@ -60,13 +73,19 @@ const Desktop = ({ initialOpenApp = null }) => {
       style={{ backgroundImage: `url(${wallpaper})` }}
     >
       <div className="absolute inset-0 bg-slate-950/50"></div>
-      <div className="absolute inset-0 bg-linear-to-b from-slate-950/30 via-slate-950/20 to-slate-950/80"></div>
+      <div
+        className={`pointer-events-none absolute inset-0 bg-linear-to-b ${visualModeOverlay[visualMode]}`}
+      ></div>
       <TopBar onOpenWelcome={() => openWindow("welcome")} />
       <DesktopApps
         selectedIcon={selectedIcon}
         onSelectIcon={handleSelectIcon}
         onOpenApp={openWindow}
       />
+      <Dock openWindows={openWindows} onOpenApp={openWindow} />
+
+      {/* <CommandPalette onOpenApp={openWindow}/> */}
+
       <OSWindow
         title="Welcome"
         isOpen={openWindows.welcome}
@@ -111,7 +130,17 @@ const Desktop = ({ initialOpenApp = null }) => {
       >
         <ProjectsApp />
       </OSWindow>
-      <Dock openWindows={openWindows} onOpenApp={openWindow} />
+      <OSWindow
+        title="Settings"
+        isOpen={openWindows.settings}
+        onClose={() => closeWindow("settings")}
+        onFocus={() => focusWindow("settings")}
+        zIndex={windowsZIndexes.settings}
+        defaultPosition={{ x: 420, y: 120 }}
+        className="w-fit"
+      >
+        <SettingsApp />
+      </OSWindow>
     </main>
   );
 };
