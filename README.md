@@ -12,7 +12,7 @@ A personal web operating system built with React and TailwindCSS, featuring a wi
 
 ---
 
-## ✨ About the Project
+## About the Project
 
 **ManentiOS** is a personal WebOS that runs directly in the browser.
 Instead of being a traditional portfolio website, it simulates a small operating system where users can open apps, move windows, explore projects, customize the interface, and interact with different parts of the desktop.
@@ -21,7 +21,7 @@ The project has a **winter-tech** visual identity, mixing dark cold colors, rain
 
 ---
 
-## 🧊 Main Features
+## Main Features
 
 * Login-style onboarding screen
 * Desktop interface with winter-themed wallpaper
@@ -40,27 +40,27 @@ The project has a **winter-tech** visual identity, mixing dark cold colors, rain
 
 ---
 
-## 🖥️ Apps Included
+## Apps Included
 
-### 🌧️ FrostLog
+### FrostLog
 
 A winter-tech journal/log app where I can display notes, thoughts, and development updates inside ManentiOS.
 
-### 🧮 Calculator
+### Calculator
 
 A functional calculator app with basic operations, designed to feel like a native utility inside the OS.
 
-### 🗂️ Projects
+### Projects
 
 A portfolio app that showcases some of my best projects, including web apps, bots, hardware projects, and full-stack experiments.
 
-### ⚙️ Settings
+### Settings
 
 A customization app where users can change the visual mode and ambient effect of ManentiOS.
 
 ---
 
-## 🧭 Navigation Features
+## Navigation Features
 
 ### IceDock
 
@@ -71,7 +71,7 @@ It also shows which apps are currently open.
 
 Press:
 
-```bash
+```keyboard
 Ctrl + K
 ```
 
@@ -79,34 +79,15 @@ to open the Command Palette, search for apps, and launch them quickly from anywh
 
 ---
 
-## 🎨 Visual Theme
-
-ManentiOS follows a **winter + nature + technology** aesthetic inspired by:
-
-* Snowy forests
-* Rainy landscapes
-* Cold dark colors
-* Foggy mountains
-* Glass-style panels
-* Cyan and blue tech accents
-* Minimal futuristic interfaces
-
-The goal is to make the interface feel like a calm digital cabin inside a rainy winter forest.
-
----
-
-## 🛠️ Built With
+## Built With
 
 * React
 * Vite
 * TailwindCSS
-* JavaScript
-* HTML
-* CSS
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 Clone the repository:
 
@@ -140,56 +121,7 @@ http://localhost:5173
 
 ---
 
-## 📁 Project Structure
-
-```txt
-src/
-├─ assets/
-├─ data/
-│  └─ osApps.js
-├─ components/
-│  ├─ Apps/
-│  │  ├─ CalculatorApp.jsx
-│  │  ├─ FrostLogApp.jsx
-│  │  ├─ ProjectsApp.jsx
-│  │  └─ SettingsApp.jsx
-│  ├─ Desktop/
-│  │  ├─ AmbientLayer.jsx
-│  │  ├─ CommandPalette.jsx
-│  │  ├─ Desktop.jsx
-│  │  ├─ DesktopApps.jsx
-│  │  ├─ DesktopIcon.jsx
-│  │  ├─ Dock.jsx
-│  │  ├─ OSWindow.jsx
-│  │  ├─ TopBar.jsx
-│  │  └─ WelcomeWindow.jsx
-│  └─ Onboarding/
-│     ├─ ActionButton.jsx
-│     ├─ Onboarding.jsx
-│     └─ ProfileImage.jsx
-├─ App.jsx
-└─ main.jsx
-```
-
----
-
-## 🎯 Project Goal
-
-The goal of ManentiOS is to create a fun and creative portfolio experience while practicing:
-
-* React componentization
-* State management
-* Interactive UI behavior
-* TailwindCSS styling
-* Draggable windows
-* App-based interface design
-* Desktop-like user experience
-
-This project was built as part of the Hack Club WebOS workshop, but customized with my own theme, apps, interface, and design direction.
-
----
-
-## 🧠 What I Learned
+## What I Learned
 
 While building ManentiOS, I learned how to simulate several operating-system-like behaviors in a web browser, such as:
 
